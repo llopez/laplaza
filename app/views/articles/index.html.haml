@@ -22,8 +22,9 @@
         %td= article.price
         %td= article.stock
         %td
-          = link_to "Edit", "#", class: 'btn btn-warning btn-xs'
-          = link_to "View", "#", class: 'btn btn-info btn-xs'
+          = link_to "Edit", edit_article_path(article), class: 'btn btn-warning btn-xs'
+          = link_to "View", article, class: 'btn btn-info btn-xs'
+          = link_to "Delete", article, class: 'btn btn-danger btn-xs', method: 'delete', data: {confirm: 'Are you sure?'}
           
 .text-center
   = paginate(@articles, theme: 'la_plaza')
