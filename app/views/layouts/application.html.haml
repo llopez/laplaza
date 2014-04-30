@@ -1,9 +1,22 @@
 !!!
-%html
+%html{:lang => "en"}
   %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
     %title La plaza del plomero
-    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = stylesheet_link_tag "application",media: "all", "data-turbolinks-track" => true
     = csrf_meta_tags
+    
+    /[if lt IE 9]
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   %body
-    = yield
+    .container
+      .header
+        %ul.nav.nav-pills.pull-right
+          %li.active= link_to 'Articles', articles_path
+        %h3.text-muted La plaza del plomero
+      .row
+        .col-lg-12= yield
+    = javascript_include_tag "application", "data-turbolinks-track" => true
