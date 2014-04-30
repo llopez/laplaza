@@ -1,6 +1,10 @@
 %br
-%form.form-horizontal
-  %input.form-control(type='search' placeholder='Search ...')
+
+= search_form_for @q, html: {class: 'form-inline'} do |f|
+  .input-group
+    = f.text_field :title_cont, class: 'form-control', placeholder: 'Search...'
+    %span.input-group-btn
+      = f.submit  class: 'btn btn-default'
 
 %table.table.table-striped
   %thead
@@ -22,16 +26,18 @@
           = link_to "View", "#", class: 'btn btn-info btn-xs'
           
 .text-center
-  %ul.pagination
-    %li
-      %a(href='#') &laquo;
-      %a(href='#') 1
-      %a(href='#') 2
-      %a(href='#') 3
-      %a(href='#') 4
-      %a(href='#') 5
-      %a(href='#') 6
-      %a(href='#') &raquo;
+  = paginate(@articles)
+
+  / %ul.pagination
+  /   %li
+  /     %a(href='#') &laquo;
+  /     %a(href='#') 1
+  /     %a(href='#') 2
+  /     %a(href='#') 3
+  /     %a(href='#') 4
+  /     %a(href='#') 5
+  /     %a(href='#') 6
+  /     %a(href='#') &raquo;
 
           
   
