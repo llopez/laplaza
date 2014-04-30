@@ -26,18 +26,4 @@
           = link_to "View", "#", class: 'btn btn-info btn-xs'
           
 .text-center
-  = paginate(@articles)
-
-  / %ul.pagination
-  /   %li
-  /     %a(href='#') &laquo;
-  /     %a(href='#') 1
-  /     %a(href='#') 2
-  /     %a(href='#') 3
-  /     %a(href='#') 4
-  /     %a(href='#') 5
-  /     %a(href='#') 6
-  /     %a(href='#') &raquo;
-
-          
-  
+  = paginate(@articles, theme: 'la_plaza')
