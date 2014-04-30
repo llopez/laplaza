@@ -6,8 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Article.create title: "Article 1", price: 10, stock: 23
-Article.create title: "Article 2", price: 3, stock: 5
-Article.create title: "Article 3", price: 4, stock: 2
-Article.create title: "Article 4", price: 1, stock: 1
-Article.create title: "Article 5", price: 8, stock: 50
+
+100.times do |n|
+  Article.create title: "Article #{n}", price: rand(999), stock: rand(30)
+end
