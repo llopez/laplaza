@@ -1,0 +1,37 @@
+%br
+%form.form-horizontal
+  %input.form-control(type='search' placeholder='Search ...')
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th #
+      %th Title
+      %th Price
+      %th Stock
+      %th
+  %tbody
+    - @articles.each do |article|
+      %tr
+        %td= article.id
+        %td= article.title
+        %td= article.price
+        %td= article.stock
+        %td
+          = link_to "Edit", "#", class: 'btn btn-warning btn-xs'
+          = link_to "View", "#", class: 'btn btn-info btn-xs'
+          
+.text-center
+  %ul.pagination
+    %li
+      %a(href='#') &laquo;
+      %a(href='#') 1
+      %a(href='#') 2
+      %a(href='#') 3
+      %a(href='#') 4
+      %a(href='#') 5
+      %a(href='#') 6
+      %a(href='#') &raquo;
+
+          
+  
