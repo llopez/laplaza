@@ -15,8 +15,17 @@
     .container
       .header
         %ul.nav.nav-pills.pull-right
-          %li.active= link_to 'Articles', articles_path
-        %h3.text-muted La plaza del plomero
+          %li
+            = link_to articles_path do
+              %span.glyphicon.glyphicon-search
+              Query
+          %li
+            = link_to new_article_path do
+              %span.glyphicon.glyphicon-save
+              New
+            
+        %h3.text-muted
+          %a(href='/') La plaza del plomero
       .row
         .col-lg-12= yield
     = javascript_include_tag "application", "data-turbolinks-track" => true

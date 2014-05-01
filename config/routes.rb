@@ -1,5 +1,5 @@
 LaPlaza::Application.routes.draw do
-  resources :articles, except: :create
+  resources :articles
   root to: 'articles#index'
   
   # The priority is based upon order of creation: first created -> highest priority.

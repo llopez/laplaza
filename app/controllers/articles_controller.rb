@@ -7,6 +7,17 @@ class ArticlesController < ApplicationController
     respond_with @articles
   end
   
+  def new
+    @article = Article.new
+    respond_with @article
+  end
+  
+  def create
+    @article = Article.new(article_params)
+    flash[:notice] = "Article was successfully created." if @article.save
+    respond_with(@article)
+  end
+  
   def show
     @article = Article.find params[:id]
     respond_with @article
@@ -19,7 +30,7 @@ class ArticlesController < ApplicationController
   
   def update
     @article = Article.find params[:id]
-    @article.update_attributes(article_params)
+    flash[:notice] = "Article was successfully updated." if @article.update_attributes(article_params)
     respond_with(@article)
   end
   
