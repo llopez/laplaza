@@ -19,7 +19,7 @@
       %tr
         %td= article.id
         %td= article.title
-        %td= article.price
+        %td= number_to_currency article.price
         %td= article.stock
         %td
           = link_to "Edit", edit_article_path(article), class: 'btn btn-warning btn-xs'
