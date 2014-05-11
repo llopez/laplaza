@@ -27,5 +27,7 @@
         %h3.text-muted
           %a(href='/') La plaza del plomero
       .row
-        .col-lg-12= yield
+        .col-lg-12
+          = render 'shared/flash_messages'
+          = yield
     = javascript_include_tag "application", "data-turbolinks-track" => true
