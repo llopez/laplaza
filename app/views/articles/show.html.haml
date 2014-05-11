@@ -1,10 +1,20 @@
-%dl.dl-horizontal
-  %dt Title
-  %dd= @article.title
-  
-  %dt Price
-  %dd= @article.price
-  
-  %dt Stock
-  %dd= @article.stock
-  
+.panel.panel-default
+  .panel-heading
+    .panel-title
+      = @article.title
+  .panel-body
+    %dl.dl-horizontal
+      %dt= Article.human_attribute_name(:title)
+      %dd= @article.title
+
+      %dt= Article.human_attribute_name(:price)
+      %dd= number_to_currency @article.price
+
+      %dt= Article.human_attribute_name(:stock)
+      %dd= @article.stock
+
+      %dt= Article.human_attribute_name(:created_at)
+      %dd= l @article.created_at, format: :long
+
+      %dt= Article.human_attribute_name(:updated_at)
+      %dd= l @article.updated_at, format: :long
