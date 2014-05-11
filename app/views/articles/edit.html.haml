@@ -1,6 +1,6 @@
 .panel.panel-default
   .panel-heading
     .panel-title
-      = t('edit_article')
+      = t('edit', scope: 'helpers.titles', model: 'Artículo')
   .panel-body
     = render 'form'

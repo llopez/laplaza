@@ -18,11 +18,11 @@
           %li
             = link_to articles_path do
               %span.glyphicon.glyphicon-search
-              Query
+              = t('search', scope: 'helpers.titles', model: 'Artículo')
           %li
             = link_to new_article_path do
               %span.glyphicon.glyphicon-save
-              New
+              = t('new', scope: 'helpers.titles', model: 'Artículo')
             
         %h3.text-muted
           %a(href='/') La plaza del plomero
