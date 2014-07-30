@@ -12,7 +12,7 @@
   .form-group{class: f.object.errors[:stock].any? ? 'has-error' : ''}
     = f.label :stock, class: 'control-label col-md-2'
     .col-md-10
-      = f.number_field :stock, class: 'form-control'
+      = f.text_field :stock, class: 'form-control'
       %span.help-block= f.object.errors[:stock].join(', ')
   .form-group
     .col-sm-offset-2.col-sm-10
