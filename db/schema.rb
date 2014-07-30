@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140425023336) do
+ActiveRecord::Schema.define(version: 20140730134422) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
-    t.float    "price"
-    t.integer  "stock"
+    t.float    "price",      default: 0.0
+    t.integer  "stock",      default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
