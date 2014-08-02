@@ -2,7 +2,7 @@
 
 = search_form_for @q, html: {class: 'form-inline'} do |f|
   .input-group
-    = f.text_field :title_cont, class: 'form-control', placeholder: t('search_term')
+    = f.text_field :title_cont, class: 'form-control', placeholder: t('search_term'), autocomplete: 'off'
     %span.input-group-btn
       = f.submit class: 'btn btn-default'
 

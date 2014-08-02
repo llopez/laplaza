@@ -2,18 +2,18 @@
   .form-group{class: f.object.errors[:title].any? ? 'has-error' : ''}
     = f.label :title, class: 'control-label col-md-2'
     .col-md-10
-      = f.text_field :title, class: 'form-control'
+      = f.text_field :title, class: 'form-control', tabindex: 1, autofocus: true
       %span.help-block= f.object.errors[:title].join(', ')
   .form-group{class: f.object.errors[:price].any? ? 'has-error' : ''}
     = f.label :price, class: 'control-label col-md-2'
     .col-md-10
-      = f.text_field :price, class: 'form-control'
+      = f.text_field :price, class: 'form-control', tabindex: 2, autocomplete: 'off'
       %span.help-block= f.object.errors[:price].join(', ')
   .form-group{class: f.object.errors[:stock].any? ? 'has-error' : ''}
     = f.label :stock, class: 'control-label col-md-2'
     .col-md-10
-      = f.text_field :stock, class: 'form-control'
+      = f.text_field :stock, class: 'form-control', tabindex: 3, autocomplete: 'off'
       %span.help-block= f.object.errors[:stock].join(', ')
   .form-group
     .col-sm-offset-2.col-sm-10
-      = f.submit class: 'btn btn-default'
+      = f.submit class: 'btn btn-default', tabindex: 4, onblur: "document.getElementById('article_title').focus()"
