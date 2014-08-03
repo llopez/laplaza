@@ -10,7 +10,7 @@
   %thead
     %tr
       %th #
-      %th= Article.human_attribute_name :title
+      %th= sort_link(@q, :title, default_order: :desc)
       %th= Article.human_attribute_name :price
       %th= Article.human_attribute_name :stock
       %th
