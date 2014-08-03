@@ -2,6 +2,10 @@
   .panel-heading
     .panel-title
       = @article.title
+      %span.pull-right
+        = link_to t("edit", scope: 'helpers.links'), edit_article_path(@article), class: 'btn btn-warning btn-xs'
+        = link_to t("destroy", scope: 'helpers.links'), @article, class: 'btn btn-danger btn-xs', method: 'delete', data: {confirm: 'Are you sure?'}
+      
   .panel-body
     %dl.dl-horizontal
       %dt= Article.human_attribute_name(:title)
