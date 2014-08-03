@@ -1,3 +1,9 @@
 es:
   search_term: 'Término de búsqueda'
-  
+  flash:
+    article:
+      create: "Artículo creado con éxito"
+      update: "Artículo editado con éxito"
+      destroy:
+        success: "Artículo borrado con éxito"
+        error: "Artículo no pudo ser borrado"

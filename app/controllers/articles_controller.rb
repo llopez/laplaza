@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
   
   def create
     @article = Article.new(article_params)
-    flash[:notice] = "Article was successfully created." if @article.save
+    flash[:notice] = I18n.t("flash.article.create") if @article.save
     respond_with(@article)
   end
   
@@ -30,16 +30,16 @@ class ArticlesController < ApplicationController
   
   def update
     @article = Article.find params[:id]
-    flash[:notice] = "Article was successfully updated." if @article.update_attributes(article_params)
+    flash[:notice] = I18n.t("flash.article.update") if @article.update_attributes(article_params)
     respond_with(@article)
   end
   
   def destroy
     @article = Article.find params[:id]
     if @article.destroy
-      flash[:notice] = "Article was successfully destroyed."
+      flash[:notice] = I18n.t("flash.article.destroy.success")
     else
-      flash[:error] = "Article couldn't be destroyed."
+      flash[:error] = I18n.t("flash.article.destroy.error")
     end
     redirect_to articles_path
   end

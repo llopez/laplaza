@@ -8,6 +8,8 @@ es:
   errors:
     messages:
       taken: "no esta disponible"
+      blank: "no puede estar vacio"
+      not_a_number: "no es un número"
 
   # Active Record models configuration
   activerecord:
