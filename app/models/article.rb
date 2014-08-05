@@ -4,6 +4,6 @@ class Article < ActiveRecord::Base
   validates :stock, numericality: true, if: "stock.present?"
 
   before_save do
-    self.title = self.title.gsub("  ", " ").strip
+    self.title = self.title.gsub(/\s+/, " ").strip
   end
 end
