@@ -1,6 +1,6 @@
 development: &default
   adapter: mysql2
-  user: root
+  username: root
   password:
   database: la_plaza_development
   host: 127.0.0.1
