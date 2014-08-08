@@ -1,16 +1,16 @@
 %br
 
-= search_form_for @q, html: {class: 'form-inline'} do |f|
+= form_tag articles_path, class: 'form-inline', method: :get do
   .input-group
-    = f.text_field :title_cont, class: 'form-control', placeholder: t('search_term'), autocomplete: 'off'
+    = text_field_tag :q, params ? params[:q] : nil, class: 'form-control', placeholder: t('search_term'), autocomplete: 'off', tabindex: 1
     %span.input-group-btn
-      = f.submit class: 'btn btn-default'
+      = submit_tag t('search'), class: 'btn btn-default'
 
 %table.table.table-striped
   %thead
     %tr
       %th #
-      %th= sort_link(@q, :title, default_order: :desc)
+      %th= Article.human_attribute_name :title
       %th= Article.human_attribute_name :price
       %th= Article.human_attribute_name :stock
       %th

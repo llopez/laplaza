@@ -6,4 +6,8 @@ class Article < ActiveRecord::Base
   before_save do
     self.title = self.title.gsub(/\s+/, " ").strip
   end
+  
+  searchable do
+    text :title
+  end
 end

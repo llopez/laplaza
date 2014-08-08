@@ -2,8 +2,13 @@ class ArticlesController < ApplicationController
   respond_to :html
   
   def index
-    @q = Article.search(params[:q])
-    @articles = @q.result.page(params[:page]).per(10)
+    search = Article.search do
+      fulltext params[:q]
+      paginate page: params[:page], per_page: 15
+    end
+
+    @articles = search.results
+
     respond_with @articles
   end
   

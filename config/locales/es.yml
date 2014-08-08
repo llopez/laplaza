@@ -1,5 +1,6 @@
 es:
   search_term: 'Término de búsqueda'
+  search: 'Buscar'
   flash:
     article:
       create: "Artículo creado con éxito"
