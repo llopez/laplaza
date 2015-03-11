@@ -16,3 +16,5 @@
 /log/*.lck
 /tmp
 /solr
+/.vagrant
+/config/*.yml
