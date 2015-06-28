@@ -1,12 +1,12 @@
 %br
 
-= form_tag articles_path, class: 'form-inline', method: :get do
+= form_tag articles_path, class: 'form-inline', id: 'searchForm', method: :get do
   .input-group
     = text_field_tag :q, params ? params[:q] : nil, class: 'form-control', placeholder: t('search_term'), autocomplete: 'off', tabindex: 1
     %span.input-group-btn
       = submit_tag t('search'), class: 'btn btn-default'
 
-%table.table.table-striped
+%table#list.table.table-striped
   %thead
     %tr
       %th #
@@ -14,17 +14,21 @@
       %th= Article.human_attribute_name :price
       %th= Article.human_attribute_name :stock
       %th
-  %tbody
-    - @articles.each do |article|
-      %tr
-        %td= article.id
-        %td= article.title
-        %td= number_to_currency article.price
-        %td= article.stock
-        %td
-          = link_to t("edit", scope: 'helpers.links'), edit_article_path(article), class: 'btn btn-warning btn-xs'
-          = link_to t("show", scope: 'helpers.links'), article, class: 'btn btn-info btn-xs'
-          = link_to t("destroy", scope: 'helpers.links'), article, class: 'btn btn-danger btn-xs', method: 'delete', data: {confirm: 'Are you sure?'}
-          
+
 .text-center
   = paginate(@articles, theme: 'la_plaza')
+
+%script(type = 'text/html' id='item-template')
+  %td 
+    <%= id %>
+  %td
+    <%= title %>
+  %td
+    <%= price %>
+  %td
+    <%= stock %>
+  %td
+    %a(class="btn btn-warning btn-xs edit-item") Editar
+    %a(class="btn btn-info btn-xs show-item") Ver
+    %a(class="btn btn-danger btn-xs destroy-item" data-method='delete' data-confirm='are you sure?') Borrar
+

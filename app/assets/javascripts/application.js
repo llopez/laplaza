@@ -16,4 +16,10 @@
 //= require turbolinks
 //= require underscore
 //= require backbone
+//= require app/models/article
+//= require app/collections/articles
+//= require app/views/item
+//= require app/views/list
+//= require app/views/search_form
+//= require app
 //= require_tree .
