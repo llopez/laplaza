@@ -32,7 +32,9 @@ Vagrant.configure(2) do |config|
     cd /vagrant
     bundle install
     bundle exec rake db:create db:migrate
-    bundle exec rails s -d -p 3000
+    # bundle exec rails s -d -p 3000
+    # bundle exec rake sunspot:solr:start
+    # bundle exec rake sunspot:solr:reindex
   SHELL
 end
 
