@@ -41,12 +41,21 @@ class ArticlesController < ApplicationController
   
   def destroy
     @article = Article.find params[:id]
-    if @article.destroy
-      flash[:notice] = I18n.t("flash.article.destroy.success")
-    else
-      flash[:error] = I18n.t("flash.article.destroy.error")
+    respond_to do |format|
+      if @article.destroy
+        format.json{ render json: @article }
+        format.html{
+          flash[:notice] = I18n.t("flash.article.destroy.success")
+          redirect_to articles_path
+        }
+      else
+        format.json{ render json: @article}
+        format.html{
+          flash[:error] = I18n.t("flash.article.destroy.error")
+          redirect_to articles_path
+        }
+      end
     end
-    redirect_to articles_path
   end
 
 private
