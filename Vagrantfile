@@ -30,6 +30,7 @@ Vagrant.configure(2) do |config|
     rbenv global 2.2.0
     gem install bundler
     cd /vagrant
+    cp config/database.yml.example config/database.yml
     bundle install
     bundle exec rake db:create db:migrate
     # bundle exec rails s -d -p 3000
